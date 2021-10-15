@@ -1,0 +1,11 @@
+.box {
+    margin: 5%;
+}
+
+.redBoxStyle.card {
+    background-color: red;
+}
+
+.whiteBoxStyle.card {
+    background-color: whitesmoke;
+}
