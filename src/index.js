@@ -1,13 +1,16 @@
 import ReactDOM from 'react-dom';
+import {BrowserRouter, Route, Switch} from "react-router-dom"
 import AllRides from './components/AllRides.js'
 import './index.css';
 
 
 function Main() {
     return (
-        <>
-            <AllRides/>
-        </>
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={AllRides}/>
+            </Switch>
+        </BrowserRouter>
     )
 }
 

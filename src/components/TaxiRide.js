@@ -4,6 +4,7 @@ import {Card} from "react-bootstrap"
 
 import './TaxiRide.css';
 import RidesLogic from '../domain/ride'
+import {convertSecondsToHhmmss, addSecondsToDateTime} from "../utils/timeManipulation";
 
 function TaxiRide(props){
     const [card, setCardStyle] = useState("");
@@ -14,7 +15,7 @@ function TaxiRide(props){
     useEffect(() => {
         let boxColor = RidesLogic.isCardRed(props.ride.distance)? "redBoxStyle": "whiteBoxStyle";
         let price = RidesLogic.computePrice(props.ride.startTime, props.ride.distance);
-        let rideEndDateTime = RidesLogic.computeEndDateTime(props.ride.startTime, props.ride.duration)
+        let rideEndDateTime = addSecondsToDateTime(props.ride.startTime, props.ride.duration)
 
         setPrice(price);
         setCardStyle(boxColor);
@@ -23,8 +24,8 @@ function TaxiRide(props){
     }, [props]);
 
     function showAlert() {
-        let formattedDuration = new Date(props.ride.duration * 1000).toISOString().substr(11, 8);
-        alert("Duration: " + formattedDuration + ". End date: " + rideEndTime);
+        let formatted = convertSecondsToHhmmss(props.ride.duration);
+        alert("Duration: " + formatted + " - End date: " + rideEndTime);
     }
 
     return (

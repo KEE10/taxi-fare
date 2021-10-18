@@ -1,0 +1,28 @@
+{
+  "rides": [
+    {
+      "id": 1,
+      "distance": 2,
+      "startTime": "2020-06-19T13:01:17,031Z",
+      "duration": 9000
+    },
+    {
+      "id": 2,
+      "distance": 1,
+      "startTime": "2020-06-19T00:01:17,031Z",
+      "duration": 6000
+    },
+    {
+      "id": 3,
+      "distance": 2,
+      "startTime": "2020-06-19T01:01:17,031Z",
+      "duration": 180
+    },
+    {
+      "id": 4,
+      "distance": 1,
+      "startTime": "2020-06-19T18:01:17,031Z",
+      "duration": 4000
+    }
+  ]
+}

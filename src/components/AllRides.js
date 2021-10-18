@@ -1,11 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import TaxiApi from '../apis/taxiService'
+import useQuery from "../apis/apiQuery"
 import TaxiRide from './TaxiRide'
 import './AllRides.css'
 
 function AllRides() {
     const [allRides, setAllRides] = useState([]);
-
+    //const {allRides} = useQuery({method: "get"});
     useEffect(()=>{
         setAllRides(TaxiApi.getAllRides());
     }, []);
